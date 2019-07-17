@@ -1,4 +1,4 @@
-# JS Exercise 12: Recode Racer
+# JS Exercise 13: Recode Racer
 
 ## Background & Objectives
 

@@ -1,4 +1,4 @@
-# JS Exercise 12: Inbox Simulator
+# JS Exercise 14: Inbox Simulator
 
 ## Background & Objectives
 

@@ -1,4 +1,4 @@
-# JS Exercise 14: Minesweeper
+# JS Exercise 16: Minesweeper
 
 ## Background & Objectives
 
