@@ -6,7 +6,15 @@ Before we get into Objects and Classes in JavaScript, let's review the fundament
 
 Objects in JavaScript are lists of *properties* that either store data about the object or functions that manipulate the object.  This is slightly different from Ruby, where objects expose *methods*.
 
-We already looked at object literals, but here is a reminder of what they look like:
+The simplest way to create an object is by using **object literal notation**.
+
+```javascript
+var car = {
+  make: 'Honda',
+  model: 'Civic',
+  year: 1997      // Don't add a comma after the last pair!
+}
+```
 
 ```javascript
 var country = {
@@ -21,11 +29,28 @@ var country = {
 
 Each of the words on the left of the colon (`population`, `addCitizens`, etc.) are *properties* of the object `country`.  The first three properties store data (strings, arrays, numbers, other objects, etc.), while the last property `addCitizens` points to a function that changes the data stored in the object.
 
-As in Ruby, an object's properties "travel along" with it wherever it goes.  After defining the object above, we can retrieve its data using dot notation:
+Another way of creating objects is to use the **Object Constructor method** (`var myObj = new Object()`)
 
+```javascript
+var car = new Object()
+  car.make = 'Honda',
+  car.model = 'Civic',
+  car.year = 1997
+```
+
+As in Ruby, an object's properties "travel along" with it wherever it goes.  
+
+#### Reading Properties
+
+After defining the object above, we can retrieve its properties using either dot notation or bracket notation.  
 ```javascript
 country.population; // => 281931
 country.flagColors; // => ["green", "blue", "white", "yellow"]
+```
+
+```javascript
+country['population']; // => 281931
+country['flagColors']; // => ["green", "blue", "white", "yellow"]
 ```
 
 We can also invoke the functions stored in the object using the same notation:
@@ -38,6 +63,11 @@ country.population; // => 381931
 
 `addCitizens` is technically a property of the object `country`, but it is also a method, since it is a function that is defined within the object literal `country`.
 
+// NOTE: When accessing properties whose keys have a "-" in them, you must use bracket notation.
+```javascript
+console.log( car['tire-type'] );
+```
+
 Our working definition of an object in JavaScript is thus: a bundle of data and functionality that lives in a program.
 
 What, then are classes?
@@ -48,7 +78,7 @@ Ruby has many classes (`Hash`, `String`, `Enumerable`, etc.) and even allows us 
 
 Classes in Ruby are like blueprints, as mentioned before.  They contain instructions for creating new objects based on the definition of the class.
 
-JavaScript is not class-based.  There is no `class` keyword, and no notion of a class as we think of it in Ruby.
+JavaScript is not class-based.  Since ES6, there is a `class` keyword, but it is not the notion of a class as we think of it in Ruby. We will talk first about how JavaScript has been dealing with Objects for OOP purposes before ES6, then introduce the `class` keyword from ES6 after.
 
 JavaScript is also an object-based language, though it employs a different **object model** from Ruby.  The object model of JavaScript is *prototype-based* instead of *class-based*.  The Mozilla Reference provides a good definition of prototype-based languages:
 
@@ -62,7 +92,7 @@ There's no need to get confused when someone refers to "the Array class" in Java
 
 #### Using Constructors to Mimic Class Instantiation
 
-Let's revisit the example provided in Ruby Intro of a `Person` class.  We can still use JavaScript to organize objects in a hierarchical fashion, and to construct new objects based upon a *constructor* (we'll cover what a constructor is in the next lesson).
+Let's try and think back about when we learnt about classes in Ruby - with the `Person` class.  We can still use JavaScript to organize objects in a hierarchical fashion, and to construct new objects based upon a *constructor* (we'll cover what a constructor is after this).
 
 Here is how we could build a program to model the relationships between (1) people and the idea of a "Person", (2) a band and the idea of "Bandness", (3) an album and the idea of "Albumness", and (4) the way that each of these objects interacts with each other.
 

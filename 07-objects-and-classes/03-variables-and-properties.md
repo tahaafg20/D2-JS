@@ -28,7 +28,7 @@ Take note of the `var sides` statement: we didn't use the `this` keyword here.  
 
 Since the constructor function takes an argument `numSides`, we can create new `Die` objects with any number of sides, and that number will be stored in the local variable `sides`.  However, `sides` is **not a property**: its value is private to the object itself.
 
-You want proof?  Stick this in your browser console:
+You want proof?  Stick this in your console:
 
 ```javascript
 var sixDie    = new Die(6);

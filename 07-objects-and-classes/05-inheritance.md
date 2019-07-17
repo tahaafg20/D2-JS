@@ -40,7 +40,7 @@ tiger_lily.region # => "North America"
 
 In its current definition, the `Flower` class does not have a `region` reader or writer method.  So the above code would error out.
 
-The remedy is to *extend* the class by simply opening it up again with the `class` keyword and adding in the new code:
+The remedy was to *extend* the class by simply opening it up again with the `class` keyword and adding in the new code. This was called Method Overloading:
 
 ```ruby
 class Flower
@@ -67,7 +67,7 @@ function Flower(commonName, latinName) {
 }
 ```
 
-Copy the above code into your browser console so that you can create your own `Flower` objects.
+Copy the above code into your console so that you can create your own `Flower` objects.
 
 Next, let's create a new instance and make sure all is in working order:
 
@@ -172,7 +172,7 @@ If the property is not defined anywhere in the prototype chain, then JavaScript 
 
 #### Object.create
 
-ECMAScript 5, the latest release of JavaScript with [wide browser support](http://kangax.github.com/es5-compat-table/), defines the new `Object.create` method.  It's argument is an object to be used as a prototype.  It returns a new object whose prototype is the argument object.  If that sounds like gobbledigook, it's ok.  Perhaps seeing it in action will be more revelatory:
+ES5 defined a new `Object.create` method.  It's argument is an object to be used as a prototype.  It returns a new object whose prototype is the argument object.  Perhaps seeing it in action will be more revelatory:
 
 ```javascript
 function Flower(family) {

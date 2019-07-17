@@ -19,7 +19,7 @@ We can create conditional statements using the comparison operators `<`, `>` , `
 3 != 7;
 ```
 
-Type each line above into the browser console and verify that `true` or `false` is returned.  These operators should look familiar to the ones you've used in Ruby, with one difference: the `===` to determine equality. The equality operator is THREE `=` signs, not two.  JavaScript does provide a `==` comparison operator as well, but it performs type conversion before comparing and thus is not testing for *true* equality.  As a rule of thumb, always use the `===` operator in JavaScript unless you know that you want `==`.
+Type each line above into the console and verify that `true` or `false` is returned.  These operators should look familiar to the ones you've used in Ruby, with one difference: the `===` to determine equality. The equality operator is THREE `=` signs, not two.  JavaScript does provide a `==` comparison operator as well, but it performs type conversion before comparing and thus is not testing for *true* equality.  As a rule of thumb, always use the `===` operator in JavaScript unless you know that you want `==`.
 
 ### Logical Operators
 
@@ -58,7 +58,7 @@ Notice that the only way an `&&` is true is if both original statements are true
 
 The third logical operator is `NOT`, represented as `!`.  The `!` operator changes the truth value of any conditional statement.  So if the conditional statement `x < 3` is true, then the statement `! ( x < 3)` is false.
 
-For each of the following conditional statements, use the given input values to determine the truth value by hand, then type it into the browser console to verify.
+For each of the following conditional statements, use the given input values to determine the truth value by hand, then type it into the console to verify.
 
 ```javascript
 var x = 112;

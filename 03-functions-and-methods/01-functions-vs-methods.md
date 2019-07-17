@@ -4,7 +4,7 @@ JavaScript, unlike Ruby, does not have an explicit notion of a _method_. In Java
 
 #### What is a Function?
 
-The best definition of a **function** is "a chunk of code that does stuff". Often we give these chunks of code a name to help us humans understand what kind of stuff the function does. If that's not good enough for you, then maybe you'd prefer the definition from MDN:
+The best definition of a **function** is "a chunk of code that does stuff". It allow us to contain all of the logic of a particular operation within a named entity that can be activated, or "called", repeatedly from other parts of our code. Often we give these chunks of code a name to help us understand what kind of stuff the function does. Here is the definition from MDN:
 
 > Generally speaking, a function is a "subprogram" that can be called by code external (or internal in the case of recursion) to the function. Like the program itself, a function is composed of a sequence of statements called the function body.  Values can be passed to a function, and the function can return a value. [Link to source](https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope)
 

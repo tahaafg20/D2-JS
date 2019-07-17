@@ -2,7 +2,7 @@
 
 Now that we know how to write conditional statements, we can use them to modify the flow of the program between different branches.
 
-The basic branching structure in JavaScript, as in Ruby, is the `if` branch.  The most basic `if` branch allows the program to run a particular set of code (or a branch) when a condition is true.  Here are some `if` branches:
+The basic control flow structure in JavaScript, as in Ruby, is the `if` branch.  The most basic `if` branch allows the program to run a particular set of code (or a branch) when a condition is true.  Here are some `if` branches:
 
 ```javascript
 if (x < 3) {
@@ -18,11 +18,26 @@ if (num1 === 5) {
 }
 ```
 
-Using the browser console experiment with these statements by assigning different values to the variables in the conditional statement to make it true or false. Notice that when the conditional statement is false there is no output because the flow of the program does not go into the body of the `if` branch.
+Using the console, experiment with these statements by assigning different values to the variables in the conditional statement to make it true or false. Notice that when the conditional statement is false there is no output because the flow of the program does not go into the body of the `if` branch, just like Ruby.
+
+Another thing to note is that blocks in Javascript, for conditions are mandatory and take the form of `{}`. Think of `{` as `do` in Ruby and `}` as `end` in Ruby.
 
 JavaScript does not have an `unless` statement. Sorry. If you want to use the opposite of an `if` statement, just use the `!` modifier: `if (! condition) { code }`.
 
 Also, JavaScript does not allow you to use `if` statement modifiers à la Ruby: `puts 'six' if 3 + 3 == 6`.
+
+### If / Else
+
+The `if...else` statement has the structure:
+
+```js
+if (condition) {
+  // this code runs if the condition evaluates to true
+} else {
+  // this code runs if the condition evaluates to false
+  // this code does not run if the condition evaluates to true
+}
+```
 
 ### If / Else If
 

@@ -1,6 +1,6 @@
 # Strings
 
-A string is a collection of characters, just like in Ruby. These can be letters, symbols or numbers.  Here are some strings in JavaScript:
+A string is a collection of characters, just like in Ruby. These can be letters, symbols or numbers.  Similar to Ruby, they are wrapped in wrapped in single or double quotes. Here are some strings in JavaScript:
 
 ```javascript
 "JavaScript is cool"
@@ -13,11 +13,27 @@ name + ' ' + "Smith"
 
 When working with numbers in strings, the numbers are treated as symbols, so adding two numeric strings works like adding two non-numeric strings in that it just concatenates the symbols.  In Ruby, the `*` symbol can also be used with strings, but not so in JavaScript. Try it:
 
-```javascript
-"Hello" * 4;
+```js
+"hamburger" - "ham"
+// => NaN
+
+"hamburger" * 3
+// => NaN
 ```
 
-What's `NaN`, you may ask? That's just JavaScript telling you that `"Hello"` is **Not a Number**. Because it is not a number. It's a string. Thank you, JavaScript.
+What's `NaN`, you may ask? That's just JavaScript telling you that `"Hello"` is **Not a Number**. Because it is not a number. It's a string.
+
+The only operator for strings is `+` which concatenates. Concatenation was very common before ES2015 introduced string templates which allows interpolation of variables using backticks, similar to how string interpolation in Ruby works.
+
+```js
+var message = 'the sum of the number I picked and 8 is ' + sum
+console.log(message)
+```
+
+```javascript
+let message = `the first number I picked was ${myVar}`
+console.log(message)
+```
 
 ###Escaping and Special Characters
 

@@ -6,7 +6,6 @@ Mozilla's Developer Network provides this useful description for arrays:
 
 >Arrays are list-like objects that come with a several built-in methods to perform traversal and mutation operations. Neither the size of a JavaScript array nor the types of its elements are fixed.  Since an array's size can grow or shrink at any time, JavaScript arrays are not guaranteed to be dense.  In general, these are convenient characteristics, but if these features are not desirable for your particular use case, you might consider using WebGL typed arrays.  [Link to source](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/)
 
-It might be useful to think of array methods as ways of asking an array questions or giving it commands.  What kind of commands could you give an array if you didn't know anything in particular about its contents?
 
 This is a list of some of the common Array methods, properties, and idioms in JavaScript and their equivalent (or closest approximate) in Ruby.  You don't need to read through all of this right now, but you'll be using these a lot.  Come back and use this as a reference.
 
@@ -14,7 +13,7 @@ This is a list of some of the common Array methods, properties, and idioms in Ja
 
 One of the significant differences between Ruby and JavaScript is that Ruby was designed for readable code. There are always two interpreters for any given programming langauge: the compiler (i.e. computer) and the programmer (i.e. human). Ruby leans more towards prioritizing the human, JavaScript less so.
 
-Long story short, there are no `Array.first()` and `Array.last()` in JavaScript. We just have to use tried-and-true index notation.  Try this out in the browser console:
+Long story short, there are no `Array.first()` and `Array.last()` in JavaScript. We just have to use tried-and-true index notation.  Try this out in the console:
 
 ```javascript
 // Accessing the first element is as simple as using index 0.

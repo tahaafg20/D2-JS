@@ -26,7 +26,7 @@ Visually we think of a method as a black box where the arguments are input value
 
 ### Method Chaining
 
-Often we need to call more than one method on an object.  For example we may want to `concat()` and `toUpperCase()` a `String` object.  If we try to do this in two separate statements it doesn't work because `String` methods in JavaScript are non-destructive. Try it yourself in the browser console:
+Often we need to call more than one method on an object.  For example we may want to `concat()` and `toUpperCase()` a `String` object.  If we try to do this in two separate statements it doesn't work because `String` methods in JavaScript are non-destructive. Try it yourself in the console:
 
 ```javascript
 var myString = "i like programming";

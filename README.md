@@ -1,11 +1,8 @@
 # Intro to Javascript
 
-Congratulations on completing your Sinatra apps. Let's take a side track before we get to Rails: JavaScript.
-
-Today we will start JavaScript: THE programming language that is understood by browsers. It's still a programming language, like Ruby, with types, variables, functions etc. But the syntax in JavaScript is different from Ruby's, so you need to familiarise with it.
+We will start JavaScript: THE programming language that is understood by browsers. It's still a programming language, like Ruby, with types, variables, functions etc. But the syntax in JavaScript is different from Ruby's, so you need to familiarise with it.
 
 ## Background & Objectives
-
 
 The goal of this sidetrack is for you to realize that it's a programming language just like Ruby. It has variables, functions, conditions, loops, etc. We will learn the basics of JavaScript by building on
 concepts from Ruby.
@@ -49,7 +46,7 @@ npm install -g eslint
 
 4. Restart VS Code
 
-It will highlight instantly your syntax errors / style offenses in VS Code. Picking up the JavaScript syntax after Ruby may be tricky, so this should help you **a lot**.
+It will highlight instantly your syntax errors / style offenses in VS Code. Picking up the JavaScript syntax after Ruby may be trickier, so this should help you **a lot**.
 
 
 ## Navigation
@@ -64,15 +61,17 @@ order, or use them as reference when you are working on the exercises.
 - [Numbers](02-primitives/01-numbers.md)
 - [Strings](02-primitives/02-strings.md)
 - [Variables](02-primitives/03-variables.md)
+- [Nulls, Undefined and Booleans](02-primitives/04-nulls_undefined_booleans.md)
 
 ### Functions and Methods
 - [Functions vs Methods](03-functions-and-methods/01-functions-vs-methods.md)
 - [Function Basics](03-functions-and-methods/02-function-basics.md)
 - [Built in Methods](03-functions-and-methods/03-built-in-methods.md)
+- [IIFE Functions](03-functions-and-methods/04-iife-functions.md)
 
-### Branching
-- [Conditions and Logic](04-branching/01-conditions-and-logic.md)
-- [If Statements](04-branching/02-if-statements.md)
+### Control Flow
+- [Conditions and Logic](04-control_flow/01-conditions-and-logic.md)
+- [If Statements](04-control_flow/02-if-statements.md)
 
 ### Collections
 - [Array Basics](05-collections/01-array-basics.md)
@@ -90,3 +89,7 @@ order, or use them as reference when you are working on the exercises.
 - [Variables and Properties](07-objects-and-classes/03-variables-and-properties.md)
 - [Readers and Writers](07-objects-and-classes/04-readers-and-writers.md)
 - [Inheritance](07-objects-and-classes/05-inheritance.md)
+- [ES6 Class](07-objects-and-classes/06-es6-classes.md)
+
+### Scopes
+- [Scopes](08-scopes/01-scopes-in-javascript.md)

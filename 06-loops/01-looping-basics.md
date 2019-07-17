@@ -70,7 +70,7 @@ for (foo = 0; foo < bar; foo++) {
 }
 ```
 
-You don't always have to count up from zero, either. All of the following loops are valid. Can you figure out how they work? Use the browser console to try it out.
+You don't always have to count up from zero, either. All of the following loops are valid. Can you figure out how they work? Use the console to try it out.
 
 ```javascript
 var i, x;

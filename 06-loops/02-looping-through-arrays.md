@@ -42,11 +42,11 @@ while (index < count) {
 ```
 
 
-Try this out in the browser console for yourself.
+Try this out in the console for yourself.
 
 ### It's all in the .length
 
-Let's suppose that we want to sort an array of integers into two arrays: odds and evens.  In order to accomplish this, we have to iterate through each element in the source array, determine whether it is odd or even, and the shove it into the appropriate destination array.  We need a loop that will execute *as many times as there are elements in the array*.  Take a look at how we would write this, and try it out in the browser console:
+Let's suppose that we want to sort an array of integers into two arrays: odds and evens.  In order to accomplish this, we have to iterate through each element in the source array, determine whether it is odd or even, and the shove it into the appropriate destination array.  We need a loop that will execute *as many times as there are elements in the array*.  Take a look at how we would write this, and try it out in the console:
 
 ```javascript
 // First, we set up the source and destination arrays
@@ -69,13 +69,22 @@ console.log(odds);
 console.log(evens);
 ```
 
+This also obviously works for arrays that contain other data types:
+
+```js
+var names = ["tyler", "nayana", "andy", "adrian", "nick", "jesse", "james"]
+for(var i = 0; i < names.length; i++){
+  console.log(names[i])
+}
+```
+
 Experiment with this loop and create your own until you feel comfortable with the syntax.
 
 ### for ... in ...
 
 There is another way to write `for` loops in JavaScript that is a bit closer to looping in Ruby.
 
-Instead of writing `for` with a series of statements outlining the parameters of the loop (intial value, conditional, incrementor/decrementor), we can use the `for (x in y)` syntax, where `x` is a variable representing an incremtable value and `y` represents an object with a `length` property, such as `Array`. Let's try it out on a simple array. Run this in the browser console:
+Instead of writing `for` with a series of statements outlining the parameters of the loop (intial value, conditional, incrementor/decrementor), we can use the `for (x in y)` syntax, where `x` is a variable representing an incremtable value and `y` represents an object with a `length` property, such as `Array`. Let's try it out on a simple array. Run this in the console:
 
 ```javascript
 var nums = [6,0,1,9,3];
@@ -86,13 +95,25 @@ for (i in nums) {
 }
 ```
 
-The `i` variable still acts as an incrementor, just like the longhand syntax (`for (var i=0; i<n; i++)`) above.  Did you expect it to hold the value of each element in the array?  Nope, sorry.
+The `i` variable still acts as an incrementor, just like the longhand syntax (`for (var i=0; i<n; i++)`) above.  Did you expect it to hold the value of each element in the array?  Nope, sorry. It's the index.
+
+For the same array of strings above, you can also do it in the `for..in` syntax:
+```js
+var names = ["tyler", "nayana", "andy", "adrian", "nick", "jesse", "james"]
+for(i in names){
+  console.log(names[i])
+}
+```
+
+* Also begins with the keyword `for`
+* The parentheses contain the iteratee (the variable representing the index), followed by the keyword `in`, followed by the complex data type you would like to iterate over (either array or object)
+
 
 `for...in` is different from the above syntax in one very important sense: it will iterate through the elements of an enumerable object *in an arbitrary order*.  Do not use `for...in` if you are concerned with maintaining the sequential order of your array.
 
-### **STRETCH:** Missing Ruby's Enumerables
+### Missing Ruby's Enumerables
 
-One of the selling points of Ruby, in its early days, was its robust `Enumerable` method collection. In your time working with DBC, you may have grown exceedingly fond of these methods and might be missing them. They're really handy!
+One of the selling points of Ruby was its robust `Enumerable` method collection. In your time working with Ruby, you may have grown exceedingly fond of these methods and might be missing them. They're really handy!
 
 Responding to desire for these methods to appear in JavaScript, JavaScript's `Array` has gained, among others, the methods `forEach`, `reduce`, and `filter`. While these methods offer much of the convenience of Ruby's `Enumerable`, there are a number of quirks to their use that may require further investigation on your part. Check out the examples provided at MDN and try to update the preceding code to take advantage of these methods. What might the trade-offs be? What's clearer? What's more opaque? Examine the [Array.prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) documentation.
 

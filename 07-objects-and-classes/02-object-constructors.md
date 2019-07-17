@@ -1,6 +1,6 @@
 # Object Constructors
 
-The previous lesson explained a bit about how JavaScript has no notion of classes.  To simulate the way that classes work, we can use a variety of techniques.  One of the common techniques is to use **constructor** functions.  There are lots of other ways to mimic class structures, but most of them are beyond the scope of this lesson.  [Douglas Crawford](http://javascript.crockford.com/) and the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/JavaScript/) provide some good reading materials on the other techniques.
+The previous lesson explained a bit about how JavaScript has a different notion of classes.  To simulate the way that classes work, we can use a variety of techniques.  One of the common techniques is to use **constructor** functions.  There are lots of other ways to mimic class structures, but most of them are beyond the scope of this lesson.  [Douglas Crawford](http://javascript.crockford.com/) and the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/JavaScript/) provide some good reading materials on the other techniques.
 
 #### What is a constructor function?
 
@@ -29,7 +29,7 @@ function Person(name) {
 For all intents and purposes, declaring the `Person` constructor this way achieves the same effect as in the previous example. _Out in the wild_, it's extremely common to see constructors declared in his fashion, so it's very important to be comfortable with this approach as well.  For the rest of our discussion, we will be using this approach for declaring constructors.
 
 
-We will extend the constructor to set a `species` property as well.  We simply add another `this` statement to the function definition.  In a constructor, `this` is a keyword that stands for "the newly instantiated object".
+We will extend the constructor to set a `species` property as well.  We simply add another `this` statement to the function definition.  In a constructor, `this` is a keyword that stands for "the newly instantiated object". This is similar to self in Ruby.
 
 ```javascript
 function Person(name) {
@@ -67,7 +67,7 @@ Not too different, right?  Let's use the `Die` example from Ruby Intro to explor
 
 ### The Die Constructor
 
-Let's use the `Die` example from Ruby Intro to make a direct comparision between the two languages.  Type the JavaScript code into the browser console and try it out for yourself.
+Let's use the `Die` example from Ruby Intro to make a direct comparision between the two languages.  Type the JavaScript code into the console and try it out for yourself.
 
 Defining a `Die` class in Ruby:
 

@@ -4,10 +4,10 @@ Arrays are the most fundamental kind of collection.  JavaScipt, like Ruby, allow
 
 ### Creating Arrays
 
-Creating a new `Array` is easy.
+Creating a new `Array` is easy, and quite similar to how you would do it in Ruby
 
 ```javascript
-var powersOfTen = [1, 10, 100]
+let powersOfTen = [1, 10, 100]
 ```
 
 `powersOfTen`, a variable, now holds the array `[1,10,100]` as its value.  The first element is `1`, the second is `10`, and the third is `100`.
@@ -26,8 +26,11 @@ Here are some more examples of arrays:
 // This is an array of all the months
 ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"]
 
-// The elements of an array don't all need to be the same type.
-// In fact, that can be any type.
+```
+
+Just like Ruby, you can have arrays with elements of different types but it isn't very common.
+
+```javascript
 [10, "cats", 4.5, "piano"]
 
 // We can use variables in arrays, too.
@@ -35,9 +38,9 @@ var favoriteFruit = "grapes";
 [1, 2, favoriteFruit] // => [1, 2, "grapes"]
 ```
 
-### Reading from Arrays
+### Accessing Arrays
 
-Let's take a look at that array of months from above.  Paste the following into the browser console.
+Let's take a look at that array of months from above.  Paste the following into the console.
 
 ```javascript
 var months = ["January", "February", "March",
@@ -50,7 +53,7 @@ var months = ["January", "February", "March",
 
 As in Ruby, we can read an element from an array by *indexing* the array, a fancy way of telling the array: "Give me the element at *this* position."
 
-Make sure you've entered in the code that defines the `months` array above, then type the following into the browser console:
+Make sure you've entered in the code that defines the `months` array above, then type the following into the console:
 
 ```javascript
 // You "index into" an array using the bracket [...] notation.
@@ -64,7 +67,7 @@ When you type `months[0]` into the console, it should return `"January"`.
 
 JavaScript follows the same 0-based indexing as Ruby and most other programming languages.
 
-Type the following, one at a time, in the browser console:
+Type the following, one at a time, in the console:
 
 ```javascript
 months[1];
@@ -77,7 +80,7 @@ months[monthNumber];
 
 ### Changing Arrays
 
-Yes, JavaScript let's you change the values in an array, too.
+Yes, JavaScript let's you change the values in an array, just like Ruby.
 
 ```javascript
 var array = [1,2,3];

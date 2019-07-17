@@ -10,10 +10,10 @@ Check out the Resources section at the bottom of this page for links to more rea
 
 ### Creating Object Literals
 
-Creating a new object literal is easy, and looks surprisingly similar to a hash literal in Ruby.  Type the following into the browser console:
+Creating a new object literal is easy, and looks surprisingly similar to a hash literal in Ruby.  Type the following into the console:
 
 ```javascript
-var person = { firstName: 'Frank', lastName: 'Hardy', age: 25 };
+const person = { firstName: 'Frank', lastName: 'Hardy', age: 25 };
 ```
 
 We can verify the data type using the `typeof` keyword:
@@ -26,7 +26,7 @@ typeof person;
 For larger objects, it is preferable to break the declaration into multiple lines, like so:
 
 ```javascript
-var person = {
+const person = {
   firstName: 'Frank',
   lastName: 'Hardy',
   age: 25,
@@ -35,9 +35,9 @@ var person = {
 };
 ```
 
-Copy the above code into your browser console so that you can play around with it.
+Copy the above code into your console so that you can play around with it.
 
-### Reading from Objects
+### Accessing Objects
 
 If `person` were a Ruby hash, we would say that it has the keys `firstName`, `lastName`, and `age`. Since this is a JavaScript object, we refer to them as the **properties** of that object.
 
@@ -48,29 +48,36 @@ person.firstName;
 // => "Frank"
 ```
 
+You can also use the keys in `[]` just like how you would access a Hash in Ruby
+
+```javascript
+person['firstName'];
+// => "Frank"
+```
+
 In Ruby, the keys can be any data type: string, symbol, array, another hash, etc. This is not the case in JavaScript.
 
 The properties of an object are variables, and must conform to the same character requirements as other variables in JavaScript. Properties can still point to any data type value, including functions.
 
-### Changing an Object
+### Updating an Object
 
-Changing the property of an object is the same as changing the value of a variable, except we have to prefix the property with the object's name. Try this out in the browser console:
+Changing the property of an object is the same as changing the value of a variable, except we have to prefix the property with the object's name. Try this out in the console:
 
 ```javascript
 person.firstName = "Billy";
 console.log('Full name: ' + person.firstName + ' ' + person.lastName);
 ```
 
-You can even use this syntax to add properties that don't already exist.
+We can also create brand new properties for an object after it's initialized using this method.
 
 ```javascript
 var book = {};
 book.title;
 // => undefined
 
-book.title = "JavaScript for N00bs";
+book.title = "JavaScript for newbies";
 book.title;
-// => "JavaScript for N00bs";
+// => "JavaScript for newbies";
 ```
 
 In this way, we can extend objects with new properties whenever needed.  If we try to access a property that has not been defined yet, it will return `undefined`.  Nice and simple.
@@ -84,6 +91,13 @@ person.lastName = 'Hardy';
 person.age = 25;
 ```
 
+### Deleting a Property
+
+If you want to delete an object property entirely, use the `delete` keyword. This deletes the whole key-value pair, not just the value. You won't do this often.
+
+```javascript
+delete person.age
+```
 
 ### References
 

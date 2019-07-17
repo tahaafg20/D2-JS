@@ -8,31 +8,141 @@ There are three basic components to every function in JavaScript:
 2. **Parameters** - input values for the function which are treated as local variables within the function body.
 3. **Body** - the code to be executed when the function is called.
 
+There are two ways to define a function...
+
+#### Declaration
+
 The simplest syntax for defining a function is to assign a statement using the `function` keyword to a variable:
 
-```javascript
+```js
+
+function foo(bar) { bar + 'baz'; }
+
+function multiply (num1, num2) {
+  return num1 * num2
+}
+
+// Literally, the parts of the function:
+function name(parameter, parameter) { body; }
+
+```
+
+#### Expression
+
+Alternatively, you can expressively define a function as well:
+
+```js
+
 var foo = function(bar) { bar + 'baz'; };
+
+var multiply = function (num1, num2) {
+  return num1 * num2
+}
 
 // Literally, the parts of the function:
 var name = function(parameter, parameter) { body; };
 ```
 
-These same functions could also be declared using the following approach:
+#### Declarations vs. Expressions
 
-```javascript
-function foo(bar) { bar + 'baz'; }
+Both do the same thing and run the same chunk of code but they are different.
 
-// Literally, the parts of the function:
-function name(parameter, parameter) { body; }
+**Q. What differences do you notice?**
+
+- **Function declarations** define functions without assigning them to variables.
+- **Function expressions** assign *anonymous functions* to variables.
+
+
+While we call/reference functions defined through declarations and expressions the same way, they do have a subtle but important difference...
+
+### Hoisting (10 min / 10:45)
+
+Function declarations are processed before any code is executed, meaning you can call functions before they are declared in the flow of your code. This behavior is known as **hoisting**.
+
+Conversely, function expressions **are not** hoisted, meaning you cannot call them before they are defined in the flow of your code.
+
+What do you think will happen when we run the below code...
+```js
+multiply(3, 5)
+var multiply = function (num1, num2){
+  return num1 * num2
+}
+// function expression
 ```
 
-For all intents and purposes, declaring the functions `foo` and `name` this way achieves the same effect as in the previous example. _Out in the wild_, it's extremely common to see functions declared in his fashion, so it's very important to be comfortable with this approach as well.
+Surely the same thing will happen when we run the below code...
+
+```js
+multiply(3, 5)
+function multiply (num1, num2) {
+  return num1 * num2
+}
+// function declaration
+```
+> We can successfully call the multiply function before declaring it. When our script file loads, the browser processes all function declarations first, and then runs the rest of our JavaScript from top to bottom.
+
+Knowing this, what will happen each time we call `express` and `declare` in the below example?
+
+```js
+express()        // What happens when we run this function at this point in the code?
+
+var express = function () {
+  console.log('Function expression called.')
+}
+```
+
+What about when we run this example?
+
+```js
+var express = function () {
+  console.log('Function expression called.')
+}
+
+declare()        // ???
+express()        // ???
+
+function declare () {
+  console.log('Function declaration called.')
+}
+```
+
+You can read more about hoisting [here](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+
+#### Arrow Functions
+
+Following the release of ECMAScript 6 (ES6) in 2015, anonymous functions can be written as "arrow functions", a syntax adapted from CoffeeScript.
+```js
+var multiply = function (num1, num2){  // function expression
+  return num1 * num2
+}
+```
+
+What does this look like in ES6?
+```js
+const multiply = (num1, num2) => {
+  return num1 * num2
+}
+```
+
+Or, to simplify it further..
+
+```js
+const multiply = (num1, num2) => num1 * num2
+```
+Arrow functions with a "concise" function body (no brackets and on one line) have "implicit return" (no return statement necessary)
+
+However, this single line return can be faked with parentheses
+```js
+const multiply = (num1, num2) => (
+  num1 * num2
+)
+```
 
 ### Invoking a Function
 
 In Ruby, methods can be invoked just by calling their name and parameters (either enclosed in parentheses or not), e.g. `puts('Hello world!')`. Invoking a function in JavaScript is similar, except that the parentheses are *required* even if the function does not take any parameters.
 
-Thus, invoking the function defined above would be written as `foo()`. Run this code in the browser console:
+Thus, invoking the function defined above would be written as `foo()`. Run this code in the console:
 
 ```javascript
 function sayHello() { 'hello'; }
@@ -58,7 +168,7 @@ Any other code we put within the function body will be executed, but it will not
 function add(x, y) { return x + y; }
 ```
 
-Though we could also add any other statements we want to the function body. Copy this code into the browser console:
+Though we could also add any other statements we want to the function body. Copy this code into the console:
 
 ```javascript
 function add(num1, num2) {
@@ -112,6 +222,23 @@ doSomething(firstName, 33, num);
 ```
 
 In this case the third argument `num` gets passed to the parameter `age` because it is in the third position.
+
+#### Optional Parameters
+
+A second feature introduced by ES6 was optional function parameters. The optional parameters function exactly as per Ruby. Optional parameters allow us to define parameters that will default to some pre-determined value if the function is called without passing them in. We can set optional parameters in a function definition by assigning a value to the parameter definition.
+
+```js
+function exponentiate (base, exponent = 2) {
+  return base ** exponent
+}
+
+exponentiate(4, 3)
+=> 64
+
+exponentiate(4)
+=> 16
+```
+> Optional parameters are very useful when writing **recursive** functions as they allow values to more easily be passed through multiple function calls
 
 
 ### References

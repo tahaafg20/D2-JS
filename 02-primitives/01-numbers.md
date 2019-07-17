@@ -2,7 +2,7 @@
 
 #### A quick refresh on primitives
 
-Programming languages provide a set of *primitive* or *basic* data types as building blocks.  Most language also have more complex types that are built from these basic types.  Numbers and strings are the two main basic data types in JavaScript, as they are in Ruby.
+Programming languages provide a set of *primitive* or *basic* data types as building blocks.  Most language also have more complex types that are built from these basic types.  Numbers and strings are the two main basic data types in JavaScript, as they are in Ruby. There are another 3 data types that does not exist in the same manner in Ruby - Booleans, Undefined and Null.
 
 We'll go through the basic types and translate what we've already learned about Ruby into JavaScript.
 
@@ -10,7 +10,7 @@ We'll go through the basic types and translate what we've already learned about 
 
 Unlike Ruby, which differentiates between integers and floating point numbers, JavaScript only defines the `Number` data type. In other words, all numbers in JavaScript are floating-point, even if they are not written with a decimal.
 
-Enter these into the browser console one line at a time to see how they work:
+Enter these into the console one line at a time to see how they work:
 
 ```javascript
 5
@@ -24,6 +24,26 @@ typeof myNum;
 ```
 
 As you can see above, JavaScript allows you to perform basic mathematical operations on numbers.  Using the sandbox, try out some expressions with the standard operators `+` , `-`, `/`, and `*`.
+
+```js
+// Addition
+10 + 2
+// => 12
+
+// Subtraction
+10 - 2
+// => 8
+
+// Multiplication
+10 * 2
+// => 20
+
+// Division
+10 / 2
+// => 5
+```
+
+Numbers are simply represented by their digits. In JS `4`, `13`, `-3`, `2.5` and `10e3` all mean just what youd expect them to mean.
 
 You may have noticed that if you use `/` with integers that are not evenly divisible, JavaScript will return a decimal. Not quite the same as Ruby, which will only return an integer. Try these:
 
@@ -40,7 +60,24 @@ You may have noticed that if you use `/` with integers that are not evenly divis
 
 JavaScript also supports the modulus operator `%` which returns the remainder of a division operation.
 
-In addition to the usual operators, JavaScript also has a set of methods that can be called on any kind of number numbers.  You can see a list of all of these methods on the [Number page of the MDN reference](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number).
+```js
+12 % 5
+// => 2, which is the remainder of 12 / 5
+```
+
+Modulus has a pretty handy use case: to check if a number is even. We can do this by running `NUMBER % 2`. If a number is even, the result should be 0 (i.e., there should be no remainder).
+
+```js
+4 % 2
+// => 0, because 4 is even
+
+5 % 2
+// => , because 5 is odd. When 5 is divided by 2, the remainder is 1.
+```
+
+In addition to the usual operators, JavaScript also has a set of methods that can be called on any kind of number numbers.  You can see a list of all of these methods on the [Number page of the MDN reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number).
+
+You can find a full list of arithmetic operators [in the expressions and operators MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Arithmetic_operators).
 
 If you want to divide two integers and get an integer result (as you would in Ruby), you have to use the Math object's `floor()` method. For example, if you want to write 391 seconds as "6 minutes and 31 seconds", you'd run:
 
@@ -61,6 +98,32 @@ var num = 4.7;
 Math.pow(num, 3);
 ```
 
+In Javascript, there is a special 'number' type that is **Not a Number**.
+
+```js
+typeof NaN
+// => Number
+```
+
+You usually get `NaN` when the result of a math operation is not real (e.g., dividing something by 0, multiplying strings together).
+
+```js
+0/0
+// => NaN
+```
+
+You can test whether a value is a valid number using the `isNaN()` function. The method will return false if the argument passed into it is a valid number.
+
+```js
+var myFavoriteNumber = 5
+isNaN(myFavoriteNumber)
+// => false, because 5 is valid
+
+var myUnrealNumber = 0/0
+isNaN(myUnrealNumber)
+// => true, because 0 divided by 0 is NaN
+```
+
 Check out the links below if you want to explore more.
 
 ### References
@@ -68,5 +131,5 @@ Check out the links below if you want to explore more.
 The Mozilla Developer Network has a lot of great information:
 
 [MDN: JavaScript Data Structures](https://developer.mozilla.org/en/JavaScript/Data_structures)<br>
-[MDN: JS Reference: Numbers](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number)<br>
+[MDN: JS Reference: Numbers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)<br>
 [MDN: JS Reference: Math](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math/)
