@@ -93,3 +93,7 @@ order, or use them as reference when you are working on the exercises.
 
 ### Scopes
 - [Scopes](08-scopes/01-scopes-in-javascript.md)
+
+
+### Document Object Model
+- [Document Object Model](09-DOM/01-document-object-model.md)
