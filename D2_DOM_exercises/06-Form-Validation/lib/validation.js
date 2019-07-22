@@ -38,15 +38,17 @@ var checkboxInput = document.querySelector("#tos");
 // if (firstNameInput.required != true || lastNameInput.required != true || addressInput.required != true || countryInput.required != true || zipCodeInput.required != true || cityInput.required != true || emailInput.required != true || phoneInput.required != true){
 //     return false;
 // }
-firstNameInput.addEventListener("blur", validateFirstName);
-lastNameInput.addEventListener("blur", validateLastName);
-addressInput.addEventListener("blur", validateAddress);
-countryInput.addEventListener("blur", validateCountry);
-zipCodeInput.addEventListener("blur", validateZipCode);
-cityInput.addEventListener("blur", validateCity);
-emailInput.addEventListener("blur", validateEmail);
-phoneInput.addEventListener("blur", validatePhone);
-form.addEventListener("blur", validation);
+// firstNameInput.addEventListener("blur", validation);
+firstNameInput.addEventListener("keyup", validation);
+lastNameInput.addEventListener("keyup", validation);
+addressInput.addEventListener("keyup", validation);
+countryInput.addEventListener("keyup", validation);
+zipCodeInput.addEventListener("keyup", validation);
+cityInput.addEventListener("keyup", validation);
+emailInput.addEventListener("keyup", validation);
+phoneInput.addEventListener("keyup", validation);
+checkboxInput.addEventListener("keyup", validation);
+// form.addEventListener("blur", validation);
 
 function validateFirstName(){
     if (firstNameInput.value === ""){
@@ -104,8 +106,10 @@ function validateCheckBox(){
 }
 
 function validation(){
+    var button = document.querySelector(".btn-primary");
     if(validateFirstName() != false && validateLastName() != false && validateAddress() != false &&validateCountry() != false && validateCity() != false && validateEmail() != false && validateZipCode() != false && validatePhone() != false && validateCheckBox() != false ){
-        var button = document.querySelector(".btn-primary");
         button.disabled = false;
+    }else{
+        button.disabled = true;
     }
 }
